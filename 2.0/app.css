@@ -21,20 +21,6 @@ ul {
   color: #e3d1d3;
   background-color: #fff;
 }
-
-#contents-wrap {
-  position: relative;
-  top: 200px;
-  width: 400px;
-  height: auto;
-  background-color: #333;
-}
-
-#contents-adder-wrap {
-}
-.adder-form {
-}
-
 .banner {
   position: absolute;
   top: 50%;
@@ -42,10 +28,56 @@ ul {
   transform: translate(-50%, -50%);
 }
 
-.contents {
+#contents-wrap {
+  position: relative;
+  top: 200px;
+  height: auto;
+  background-color: #333;
+}
+
+#contents-adder-wrap {
+  position: relative;
+  width: 350px;
+  height: 35px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background-color: #666;
+  padding: 5px;
+}
+.adder-form {
+  float: left;
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.adder-form > input {
+  width: 270px;
+  height: 30px;
+}
+.openBtn {
+  float: left;
+  border: 0;
+  outline: 0;
+  width: 30px;
+  height: 30px;
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(0, -50%);
+  /* vertical-align: middle; 차이가 없네 */
+  background: url(images/open.png);
+  background-size: 100% 100%;
 }
+
+#contents-list-wrap {
+  position: relative;
+  width: 350px;
+  height: auto;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background-color: #939;
+}
+.contents {
+}
+
 /* #ADABAC */
