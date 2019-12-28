@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>To Do App</title>
+    <link rel="styleSheet" href="app.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #e7f5ff;
+      }
+      #wrap {
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 10px;
+        color: #fff;
+        text-align: center;
+      }
+      #header {
+        width: 100%;
+        height: 100px;
+        font-size: 40px;
+        vertical-align: middle;
+        background-color: #74b9ff;
+        border-radius: 10px;
+      }
+      #nav {
+        width: 100%;
+        height: 70px;
+      }
+      #side-left {
+        float: left;
+        width: 20%;
+        height: 800px;
+      }
+      #contents {
+        position: relative;
+        float: left;
+        width: 60%;
+        height: 800px;
+        border-radius: 15px;
+        background-color: #a5d8ff;
+      }
+      #contentsAdderWrap {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 50px;
+
+        font-size: 16px;
+        border-radius: 12px;
+        background-color: #74b9ff;
+      }
+      #side-right {
+        float: left;
+        width: 20%;
+        height: 800px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="header">
+        To Do List
+      </div>
+      <div id="nav"></div>
+      <div id="side-left"></div>
+
+      <div id="contents">
+        <div class="contentsContainer">
+          <h6 class="js-toDoInitial"></h6>
+          <ul class="js-toDoList"></ul>
+        </div>
+
+        <div id="contentsAdderWrap">
+          What To Do??
+          <form class="js-toDoForm">
+            <input type="text" placeholder="input" />
+            <button class="js-toDoAddBtn"></button>
+          </form>
+        </div>
+      </div>
+
+      <div id="side-right"></div>
+      <script src="toDo.js"></script>
+    </div>
+  </body>
+</html>
