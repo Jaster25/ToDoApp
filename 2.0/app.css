@@ -9,10 +9,6 @@ ul,
 li {
   list-style: none;
 }
-input {
-  border: 0px;
-  padding: 0 0 0 5px;
-}
 
 #banner-wrap {
   position: relative;
@@ -24,7 +20,6 @@ input {
   font-size: 70px;
 
   color: #e3d1d3;
-  background-color: #f4f4f4;
 }
 .banner {
   position: absolute;
@@ -36,17 +31,23 @@ input {
 #contents-wrap {
   position: relative;
   top: 200px;
-  height: auto;
-  background-color: #f4f4f4;
+  display: inline;
 }
 
 #contents-adder-wrap {
   position: relative;
-  width: 360px;
+  width: 368px;
   height: 45px;
   left: 50%;
   transform: translate(-50%, 0%);
-  background-color: #a66;
+  background-color: #fcfcfc;
+
+  border-top: 0.7px solid #dddddd;
+  border-bottom: 1.5px solid #dddddd;
+  border-left: 0.7px solid #dddddd;
+  border-right: 0.7px solid #dddddd;
+
+  box-shadow: 10px 10px 10px 1px #bdbbbb;
 }
 .btnOpen {
   float: left;
@@ -61,37 +62,43 @@ input {
   left: 7px;
   top: 7.5px;
 }
-.formAdder {
-}
 .formAdder > input {
+  outline: none;
+  border: 0px;
+  padding: 0 0 0 5px;
   width: 270px;
   height: 30px;
 
   position: absolute;
   top: 7px;
   left: 45px;
+  color: rgb(142, 142, 142);
 }
-
+input::placeholder {
+  color: rgb(241, 242, 242);
+  font-style: italic;
+}
 #contents-list-wrap {
   position: relative;
   width: 360px;
   height: auto;
   left: 50%;
   transform: translate(-50%, 0%);
-  background-color: #666;
+  background-color: transparent;
 
-  /* 그림자 */
-}
-.contentsList {
+  box-shadow: 5px 7px 15px 1px #bdbbbb;
 }
 
 .list > li {
   position: relative;
   width: 360px;
   height: 45px;
-  background-color: #aa6666;
-}
+  background-color: #fcfcfc;
 
+  border-bottom: 1.2px solid #dddddd;
+  border-left: 0.5px solid #dddddd;
+  border-right: 0.5px solid #dddddd;
+}
 .list > li > button {
   border: 0;
   outline: 0;
@@ -99,7 +106,6 @@ input {
   height: 30px;
   background-size: 100% 100%;
 }
-
 .btnCheck {
   float: left;
   position: absolute;
@@ -110,12 +116,14 @@ input {
   float: left;
   width: 270px;
   height: 34px;
-  background-color: #e3d1d3;
+  background-color: #fcfcfc;
 
-  padding: 0 0 0 5px;
+  padding: 5px 0 0 5px;
   position: absolute;
   top: 5.5px;
   left: 46.5px;
+  font-size: 15px;
+  color: rgb(142, 142, 142);
 }
 .btnDelete {
   float: left;
@@ -126,4 +134,47 @@ input {
   background: url(images/delete.png);
 }
 
-/* #ADABAC */
+.footer {
+  width: 360px;
+  height: 33px;
+  background-color: #fcfcfc;
+
+  border-top: 0.2px solid #dddddd;
+  border-bottom: 1.3px solid #dddddd;
+  border-left: 0.3px solid #dddddd;
+  border-right: 0.3px solid #dddddd;
+
+  box-shadow: 5px 7px 15px 1px #bdbbbb;
+}
+.footer2 {
+  position: relative;
+  left: 2px;
+  width: 356px;
+  height: 2px;
+  background-color: rgb(245, 243, 245);
+
+  border-bottom: 1.3px solid #dddddd;
+  border-left: 0.3px solid #dddddd;
+  border-right: 0.3px solid #dddddd;
+
+  box-shadow: 5px 7px 15px 1px #bdbbbb;
+}
+.footer3 {
+  position: relative;
+  left: 4px;
+  width: 352px;
+  height: 2px;
+  background-color: rgb(245, 243, 245);
+
+  border-bottom: 1.3px solid #dddddd;
+  border-left: 0.3px solid #dddddd;
+  border-right: 0.3px solid #dddddd;
+
+  box-shadow: 5px 7px 15px 1px #bdbbbb;
+}
+
+/* 
+일반 글씨
+rgb(142,142,142)
+줄 글씨
+rgb(201,202,202) */
