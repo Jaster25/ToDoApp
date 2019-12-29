@@ -9,6 +9,10 @@ ul,
 li {
   list-style: none;
 }
+input {
+  border: 0px;
+  padding: 0 0 0 5px;
+}
 
 #banner-wrap {
   position: relative;
@@ -20,7 +24,7 @@ li {
   font-size: 70px;
 
   color: #e3d1d3;
-  background-color: #fff;
+  background-color: #f4f4f4;
 }
 .banner {
   position: absolute;
@@ -33,17 +37,16 @@ li {
   position: relative;
   top: 200px;
   height: auto;
-  background-color: #333;
+  background-color: #f4f4f4;
 }
 
 #contents-adder-wrap {
   position: relative;
-  width: 350px;
-  height: 35px;
+  width: 360px;
+  height: 45px;
   left: 50%;
   transform: translate(-50%, 0%);
-  background-color: #666;
-  padding: 5px;
+  background-color: #a66;
 }
 .btnOpen {
   float: left;
@@ -51,23 +54,22 @@ li {
   outline: 0;
   width: 30px;
   height: 30px;
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
-  /* vertical-align: middle; 차이가 없네 */
   background: url(images/open.png);
   background-size: 100% 100%;
+
+  position: absolute;
+  left: 7px;
+  top: 7.5px;
 }
 .formAdder {
-  float: left;
-  position: absolute;
-  left: 40px;
-  top: 50%;
-  transform: translate(0, -50%);
 }
 .formAdder > input {
   width: 270px;
   height: 30px;
+
+  position: absolute;
+  top: 7px;
+  left: 45px;
 }
 
 #contents-list-wrap {
@@ -76,7 +78,7 @@ li {
   height: auto;
   left: 50%;
   transform: translate(-50%, 0%);
-  background-color: #939;
+  background-color: #666;
 
   /* 그림자 */
 }
@@ -84,63 +86,44 @@ li {
 }
 
 .list > li {
-  /* position: relative; */
-  /* width: 360px; */
+  position: relative;
   width: 360px;
-  height: 40px;
-  /* left: 50%;
-  transform: translate(-50%, 0%); */
-  background-color: #3266;
+  height: 45px;
+  background-color: #aa6666;
 }
 
-.divBtn {
-  position: relative;
-  float: left;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-}
-.divSpan {
-  position: relative;
-  float: left;
-  width: 280px;
-  height: 40px;
-  text-align: center;
+.list > li > button {
+  border: 0;
+  outline: 0;
+  width: 30px;
+  height: 30px;
+  background-size: 100% 100%;
 }
 
 .btnCheck {
-  border: 0;
-  outline: 0;
-  width: 30px;
-  height: 30px;
-  background: url(images/noChecked.png);
-  background-size: 100% 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  float: left;
+  position: absolute;
+  left: 7px;
+  top: 7.5px;
 }
-.divSpan > span {
+.span {
   float: left;
   width: 270px;
   height: 34px;
-  background-color: #3666;
+  background-color: #e3d1d3;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 0 0 0 5px;
+  position: absolute;
+  top: 5.5px;
+  left: 46.5px;
 }
 .btnDelete {
-  border: 0;
-  outline: 0;
-  width: 30px;
-  height: 30px;
-  background: url(images/delete.png);
-  background-size: 100% 100%;
+  float: left;
+  position: absolute;
+  right: 7px;
+  top: 7.5px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: url(images/delete.png);
 }
 
 /* #ADABAC */
