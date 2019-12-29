@@ -5,7 +5,8 @@
 body {
   background-color: #f4f4f4;
 }
-ul {
+ul,
+li {
   list-style: none;
 }
 
@@ -44,18 +45,7 @@ ul {
   background-color: #666;
   padding: 5px;
 }
-.adder-form {
-  float: left;
-  position: absolute;
-  left: 40px;
-  top: 50%;
-  transform: translate(0, -50%);
-}
-.adder-form > input {
-  width: 270px;
-  height: 30px;
-}
-.openBtn {
+.btnOpen {
   float: left;
   border: 0;
   outline: 0;
@@ -68,16 +58,89 @@ ul {
   background: url(images/open.png);
   background-size: 100% 100%;
 }
+.formAdder {
+  float: left;
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.formAdder > input {
+  width: 270px;
+  height: 30px;
+}
 
 #contents-list-wrap {
   position: relative;
-  width: 350px;
+  width: 360px;
   height: auto;
   left: 50%;
   transform: translate(-50%, 0%);
   background-color: #939;
+
+  /* 그림자 */
 }
-.contents {
+.contentsList {
+}
+
+.list > li {
+  /* position: relative; */
+  /* width: 360px; */
+  width: 360px;
+  height: 40px;
+  /* left: 50%;
+  transform: translate(-50%, 0%); */
+  background-color: #3266;
+}
+
+.divBtn {
+  position: relative;
+  float: left;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+.divSpan {
+  position: relative;
+  float: left;
+  width: 280px;
+  height: 40px;
+  text-align: center;
+}
+
+.btnCheck {
+  border: 0;
+  outline: 0;
+  width: 30px;
+  height: 30px;
+  background: url(images/noChecked.png);
+  background-size: 100% 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.divSpan > span {
+  float: left;
+  width: 270px;
+  height: 34px;
+  background-color: #3666;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btnDelete {
+  border: 0;
+  outline: 0;
+  width: 30px;
+  height: 30px;
+  background: url(images/delete.png);
+  background-size: 100% 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* #ADABAC */
