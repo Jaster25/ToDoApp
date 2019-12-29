@@ -108,6 +108,10 @@ const handleCheck = event => {
 
 function init() {
   loadToDos();
+  // console.log(list);
+  // console.log(list.childNodes[2]);
+  // console.log(list.childNodes.length);
+
   form.addEventListener("submit", handleSubmit);
 }
 

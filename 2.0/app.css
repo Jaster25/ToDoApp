@@ -84,7 +84,7 @@ input::placeholder {
   height: auto;
   left: 50%;
   transform: translate(-50%, 0%);
-  background-color: transparent;
+  background-color: #bdbbbb;
 
   box-shadow: 5px 7px 15px 1px #bdbbbb;
 }
