@@ -1,21 +1,30 @@
 const form = document.querySelector(".formAdder");
 const input = form.querySelector("input");
 const list = document.querySelector(".list");
-
-// const spanItems
-
+const spanCount = document.querySelector(".itemsCount");
 const btnAll = document.querySelector(".btnAll");
 const btnActive = document.querySelector(".btnActive");
 const btnCompleted = document.querySelector(".btnCompleted");
-
-const btnClearCompleted = document.querySelector(".btnClearCompleted");
+const btnClearCompleted = document.querySelector(".btnClear");
+const btnFold = document.querySelector(".btnFold");
 
 const TODOS_LS = "toDos";
 let MODE = "";
+let FOLD = true;
 let toDos = [];
 
 const saveToDos = () => {
   localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
+};
+
+const updateCount = () => {
+  if (toDos.length === 0) {
+    spanCount.innerText = "Empty";
+  } else if (toDos.length == 1) {
+    spanCount.innerText = "1 item left";
+  } else {
+    spanCount.innerText = toDos.length + " items left";
+  }
 };
 
 const paintToDo = toDo => {
@@ -102,10 +111,6 @@ const handleBtnCompleted = event => {
   changeMode("Completed");
 };
 
-btnAll.addEventListener("click", handleBtnAll);
-btnActive.addEventListener("click", handleBtnActive);
-btnCompleted.addEventListener("click", handleBtnCompleted);
-
 const loadToDos = () => {
   const loadedToDos = JSON.parse(localStorage.getItem(TODOS_LS));
   if (loadedToDos !== null && loadedToDos.length !== 0) {
@@ -137,6 +142,7 @@ const handleSubmit = event => {
     saveToDos();
   }
   input.value = "";
+  updateCount();
 };
 
 const handleDelete = event => {
@@ -149,10 +155,7 @@ const handleDelete = event => {
     return id !== toDo.id;
   });
   toDos = cleanedToDos;
-
-  for (let i = id; i < toDos.length; ++i) {
-    toDos[i].id--;
-  }
+  for (let i = id; i < toDos.length; ++i) toDos[i].id--;
   for (let i = 0; i < list.childNodes.length; ++i) {
     if (id <= list.childNodes[i].id) {
       list.childNodes[i].id--;
@@ -160,6 +163,7 @@ const handleDelete = event => {
   }
 
   saveToDos();
+  updateCount();
 };
 
 const handleCheck = event => {
@@ -190,10 +194,47 @@ const handleCheck = event => {
   saveToDos();
 };
 
+const handleBtnClear = event => {
+  event.preventDefault();
+
+  const cleanedToDos = toDos.filter(toDo => {
+    return !toDo.check;
+  });
+  toDos = cleanedToDos;
+  for (let i = 0; i < toDos.length; ++i) toDos[i].id = i;
+
+  changeMode(MODE);
+  saveToDos();
+  updateCount();
+};
+
+const handleBtnFold = event => {
+  event.preventDefault();
+  const contents = document.querySelector("#contents-list-wrap");
+  if (FOLD) {
+    contents.style.visibility = "hidden";
+    btnFold.style.background = 'url("images/close.png")';
+    btnFold.style.backgroundSize = "100%,100%";
+  } else {
+    contents.style.visibility = "visible";
+    btnFold.style.background = 'url("images/open.png")';
+    btnFold.style.backgroundSize = "100%,100%";
+  }
+  FOLD = !FOLD;
+};
+
+form.addEventListener("submit", handleSubmit);
+btnAll.addEventListener("click", handleBtnAll);
+btnActive.addEventListener("click", handleBtnActive);
+btnCompleted.addEventListener("click", handleBtnCompleted);
+btnClearCompleted.addEventListener("click", handleBtnClear);
+btnFold.addEventListener("click", handleBtnFold);
+
 function init() {
   loadToDos();
+  updateCount();
   modeOn("All");
-  form.addEventListener("submit", handleSubmit);
+  FOLD = true;
 }
 
 init();

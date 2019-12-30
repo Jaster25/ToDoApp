@@ -49,7 +49,7 @@ li {
 
   box-shadow: 10px 10px 10px 1px #bdbbbb;
 }
-.btnOpen {
+.btnFold {
   float: left;
   border: 0;
   outline: 0;
@@ -211,12 +211,3 @@ input::placeholder {
   color: rgb(167, 166, 166);
   font-size: 12px;
 } */
-
-/* 
-일반 글씨
-rgb(142,142,142)
-footer 글씨
-color: rgb(167, 166, 166);
-  font-size: 12px;
-줄 글씨
-rgb(201,202,202) */
