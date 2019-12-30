@@ -10,6 +10,8 @@ li {
   list-style: none;
 }
 
+/* transition: background-color .5s; */
+
 #banner-wrap {
   position: relative;
   top: 200px;
@@ -133,6 +135,7 @@ input::placeholder {
   top: 7.5px;
 
   background: url(images/delete.png);
+  visibility: hidden;
 }
 
 .footer2 {
@@ -203,11 +206,3 @@ input::placeholder {
   float: left;
   margin: 3px;
 }
-/* .buttons * {
-  color: rgb(167, 166, 166);
-  font-size: 12px;
-}
-.btnClear {
-  color: rgb(167, 166, 166);
-  font-size: 12px;
-} */

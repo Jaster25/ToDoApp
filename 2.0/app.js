@@ -180,8 +180,9 @@ const handleCheck = event => {
   if (MODE !== "All") {
     list.removeChild(li);
   } else if (newCheck) {
-    btnCheck.style.background = 'url("images/checked.png")';
+    btnCheck.style.background = 'url("images/checked-green.png")';
     btnCheck.style.backgroundSize = "100%,100%";
+
     span.style.color = "rgb(201, 202, 202)";
     span.style.textDecoration = "line-through";
   } else {
@@ -223,12 +224,27 @@ const handleBtnFold = event => {
   FOLD = !FOLD;
 };
 
+const handleBtnDelAppear = event => {
+  list.childNodes.forEach(li => {
+    var btnDel = li.querySelector(".btnDelete");
+    btnDel.style.visibility = "visible";
+  });
+};
+const handleBtnDelDisappear = event => {
+  list.childNodes.forEach(li => {
+    var btnDel = li.querySelector(".btnDelete");
+    btnDel.style.visibility = "hidden";
+  });
+};
+
 form.addEventListener("submit", handleSubmit);
 btnAll.addEventListener("click", handleBtnAll);
 btnActive.addEventListener("click", handleBtnActive);
 btnCompleted.addEventListener("click", handleBtnCompleted);
 btnClearCompleted.addEventListener("click", handleBtnClear);
 btnFold.addEventListener("click", handleBtnFold);
+list.addEventListener("mouseenter", handleBtnDelAppear);
+list.addEventListener("mouseleave", handleBtnDelDisappear);
 
 function init() {
   loadToDos();
