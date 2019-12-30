@@ -43,7 +43,7 @@ li {
   background-color: #fcfcfc;
 
   border-top: 0.7px solid #dddddd;
-  border-bottom: 1.5px solid #dddddd;
+  border-bottom: 1.2px solid #dddddd;
   border-left: 0.7px solid #dddddd;
   border-right: 0.7px solid #dddddd;
 
@@ -83,8 +83,9 @@ input::placeholder {
   width: 360px;
   height: auto;
   left: 50%;
+  overflow: hidden;
   transform: translate(-50%, 0%);
-  background-color: #bdbbbb;
+  background-color: transparent;
 
   box-shadow: 5px 7px 15px 1px #bdbbbb;
 }
@@ -134,18 +135,6 @@ input::placeholder {
   background: url(images/delete.png);
 }
 
-.footer {
-  width: 360px;
-  height: 33px;
-  background-color: #fcfcfc;
-
-  border-top: 0.2px solid #dddddd;
-  border-bottom: 1.3px solid #dddddd;
-  border-left: 0.3px solid #dddddd;
-  border-right: 0.3px solid #dddddd;
-
-  box-shadow: 5px 7px 15px 1px #bdbbbb;
-}
 .footer2 {
   position: relative;
   left: 2px;
@@ -163,7 +152,7 @@ input::placeholder {
   position: relative;
   left: 4px;
   width: 352px;
-  height: 2px;
+  height: 1.5px;
   background-color: rgb(245, 243, 245);
 
   border-bottom: 1.3px solid #dddddd;
@@ -172,9 +161,62 @@ input::placeholder {
 
   box-shadow: 5px 7px 15px 1px #bdbbbb;
 }
+.footer {
+  width: 360px;
+  height: 33px;
+  background-color: #fcfcfc;
+
+  border-top: 0.2px solid #dddddd;
+  border-bottom: 1.3px solid #dddddd;
+  border-left: 0.3px solid #dddddd;
+  border-right: 0.3px solid #dddddd;
+
+  box-shadow: 5px 7px 15px 1px #bdbbbb;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.footer button {
+  border: 0px solid #dddddd;
+  border-radius: 5px;
+  outline: 0px;
+  background-color: #fcfcfc;
+}
+
+.itemsCount {
+  padding-top: 6px;
+}
+.btnClear {
+  margin: 3px;
+}
+
+.itemsCount,
+.buttons > button,
+.btnClear {
+  color: rgb(167, 166, 166);
+  font-size: 12px;
+  height: 25px;
+}
+.buttons > button {
+  float: left;
+  margin: 3px;
+}
+/* .buttons * {
+  color: rgb(167, 166, 166);
+  font-size: 12px;
+}
+.btnClear {
+  color: rgb(167, 166, 166);
+  font-size: 12px;
+} */
 
 /* 
 일반 글씨
 rgb(142,142,142)
+footer 글씨
+color: rgb(167, 166, 166);
+  font-size: 12px;
 줄 글씨
 rgb(201,202,202) */
