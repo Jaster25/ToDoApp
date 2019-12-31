@@ -27,6 +27,42 @@ const updateCount = () => {
   }
 };
 
+const allowDrop = event => {
+  event.preventDefault();
+};
+
+const drag = event => {
+  event.dataTransfer.setData("text", event.target.id);
+};
+
+const drop = event => {
+  event.preventDefault();
+  const dragId = parseInt(event.dataTransfer.getData("text"));
+  let dropId;
+  let dropZone = event.target;
+  while (dropZone.tagName !== "LI") {
+    dropZone = dropZone.parentNode;
+  }
+  dropId = parseInt(dropZone.id);
+  if (dragId === dropId) return;
+
+  const dragToDo = toDos.splice(dragId, 1)[0];
+  toDos.splice(dropId, 0, dragToDo);
+  if (dragId < dropId) {
+    for (let i = dragId; i < dropId; ++i) {
+      toDos[i].id = parseInt(toDos[i].id) - 1;
+    }
+  } else {
+    for (let i = dragId; i > dropId; --i) {
+      toDos[i].id = parseInt(toDos[i].id) + 1;
+    }
+  }
+  toDos[dropId].id = dropId;
+
+  changeMode(MODE, MODE);
+  saveToDos();
+};
+
 const paintToDo = toDo => {
   const li = document.createElement("li");
   const btnCheck = document.createElement("button");
@@ -56,6 +92,11 @@ const paintToDo = toDo => {
   li.appendChild(btnDelete);
   li.addEventListener("mouseenter", handleBtnDelAppear);
   li.addEventListener("mouseleave", handleBtnDelDisappear);
+
+  li.draggable = true;
+  li.ondrop = drop;
+  li.ondragover = allowDrop;
+  li.ondragstart = drag;
   list.appendChild(li);
 };
 
