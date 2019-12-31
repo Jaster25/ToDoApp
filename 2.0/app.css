@@ -10,8 +10,6 @@ li {
   list-style: none;
 }
 
-/* transition: background-color .5s; */
-
 #banner-wrap {
   position: relative;
   top: 200px;
@@ -33,7 +31,7 @@ li {
 #contents-wrap {
   position: relative;
   top: 200px;
-  display: inline;
+  overflow: visible;
 }
 
 #contents-adder-wrap {
@@ -98,7 +96,7 @@ input::placeholder {
   height: 45px;
   background-color: #fcfcfc;
 
-  border-bottom: 1.2px solid #dddddd;
+  border-bottom: 0.8px solid #dddddd;
   border-left: 0.5px solid #dddddd;
   border-right: 0.5px solid #dddddd;
 }
@@ -145,7 +143,7 @@ input::placeholder {
   height: 2px;
   background-color: rgb(245, 243, 245);
 
-  border-bottom: 1.3px solid #dddddd;
+  border-bottom: 0.8px solid #dddddd;
   border-left: 0.3px solid #dddddd;
   border-right: 0.3px solid #dddddd;
 
@@ -158,7 +156,7 @@ input::placeholder {
   height: 1.5px;
   background-color: rgb(245, 243, 245);
 
-  border-bottom: 1.3px solid #dddddd;
+  border-bottom: 0.8px solid #dddddd;
   border-left: 0.3px solid #dddddd;
   border-right: 0.3px solid #dddddd;
 
@@ -170,7 +168,7 @@ input::placeholder {
   background-color: #fcfcfc;
 
   border-top: 0.2px solid #dddddd;
-  border-bottom: 1.3px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
   border-left: 0.3px solid #dddddd;
   border-right: 0.3px solid #dddddd;
 
@@ -205,4 +203,11 @@ input::placeholder {
 .buttons > button {
   float: left;
   margin: 3px;
+}
+
+.btnAll:hover,
+.btnActive:hover,
+.btnCompleted:hover,
+.btnClear:hover {
+  color: rgb(122, 121, 121);
 }

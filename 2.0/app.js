@@ -54,6 +54,8 @@ const paintToDo = toDo => {
   li.appendChild(btnCheck);
   li.appendChild(span);
   li.appendChild(btnDelete);
+  li.addEventListener("mouseenter", handleBtnDelAppear);
+  li.addEventListener("mouseleave", handleBtnDelDisappear);
   list.appendChild(li);
 };
 
@@ -180,9 +182,8 @@ const handleCheck = event => {
   if (MODE !== "All") {
     list.removeChild(li);
   } else if (newCheck) {
-    btnCheck.style.background = 'url("images/checked-green.png")';
+    btnCheck.style.background = 'url("images/checked.png")';
     btnCheck.style.backgroundSize = "100%,100%";
-
     span.style.color = "rgb(201, 202, 202)";
     span.style.textDecoration = "line-through";
   } else {
@@ -225,15 +226,21 @@ const handleBtnFold = event => {
 };
 
 const handleBtnDelAppear = event => {
+  const id = parseInt(event.target.id);
   list.childNodes.forEach(li => {
-    var btnDel = li.querySelector(".btnDelete");
-    btnDel.style.visibility = "visible";
+    if (id === parseInt(li.id)) {
+      var btnDel = li.querySelector(".btnDelete");
+      btnDel.style.visibility = "visible";
+    }
   });
 };
 const handleBtnDelDisappear = event => {
+  const id = parseInt(event.target.id);
   list.childNodes.forEach(li => {
-    var btnDel = li.querySelector(".btnDelete");
-    btnDel.style.visibility = "hidden";
+    if (id === parseInt(li.id)) {
+      var btnDel = li.querySelector(".btnDelete");
+      btnDel.style.visibility = "hidden";
+    }
   });
 };
 
@@ -243,8 +250,6 @@ btnActive.addEventListener("click", handleBtnActive);
 btnCompleted.addEventListener("click", handleBtnCompleted);
 btnClearCompleted.addEventListener("click", handleBtnClear);
 btnFold.addEventListener("click", handleBtnFold);
-list.addEventListener("mouseenter", handleBtnDelAppear);
-list.addEventListener("mouseleave", handleBtnDelDisappear);
 
 function init() {
   loadToDos();
