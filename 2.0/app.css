@@ -50,7 +50,7 @@ span {
   background-color: #fcfcfc;
 
   border-top: 0.7px solid #dddddd;
-  border-bottom: 1.2px solid #dddddd;
+  border-bottom: 0.7px solid #dddddd;
   border-left: 0.7px solid #dddddd;
   border-right: 0.7px solid #dddddd;
 
@@ -103,9 +103,7 @@ input::placeholder {
   height: 45px;
   background-color: #fcfcfc;
 
-  border-bottom: 0.8px solid #dddddd;
-  border-left: 0.5px solid #dddddd;
-  border-right: 0.5px solid #dddddd;
+  border: 0.5px solid #dddddd;
 }
 .list > li > button {
   border: 0;
@@ -175,7 +173,7 @@ input::placeholder {
   height: 33px;
   background-color: #fcfcfc;
 
-  border-top: 0.2px solid #dddddd;
+  border-top: 0.5px solid #dddddd;
   border-bottom: 1px solid #dddddd;
   border-left: 0.3px solid #dddddd;
   border-right: 0.3px solid #dddddd;
