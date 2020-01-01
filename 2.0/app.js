@@ -19,7 +19,7 @@ const saveToDos = () => {
 
 const updateCount = () => {
   if (toDos.length === 0) {
-    spanCount.innerText = "Empty";
+    spanCount.innerText = "empty";
   } else if (toDos.length == 1) {
     spanCount.innerText = "1 item left";
   } else {
@@ -220,11 +220,20 @@ const handleCheck = event => {
   toDos[id].check = newCheck;
   li.id = id;
 
+  function checkOut() {
+    btnCheck.style.background = 'url("images/checked.png")';
+    btnCheck.style.backgroundSize = "100%,100%";
+  }
+  function checkIn() {
+    btnCheck.style.background = 'url("images/checked-green.png")';
+    btnCheck.style.backgroundSize = "100%,100%";
+    setTimeout(checkOut, 1000);
+  }
+
   if (MODE !== "All") {
     list.removeChild(li);
   } else if (newCheck) {
-    btnCheck.style.background = 'url("images/checked.png")';
-    btnCheck.style.backgroundSize = "100%,100%";
+    checkIn();
     span.style.color = "rgb(201, 202, 202)";
     span.style.textDecoration = "line-through";
   } else {

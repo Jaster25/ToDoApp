@@ -9,6 +9,13 @@ ul,
 li {
   list-style: none;
 }
+button {
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+span {
+  transition: 0.5s ease-in-out;
+}
 
 #banner-wrap {
   position: relative;
@@ -106,6 +113,7 @@ input::placeholder {
   width: 30px;
   height: 30px;
   background-size: 100% 100%;
+  transition: 0.3s ease-in-out;
 }
 .btnCheck {
   float: left;
@@ -211,15 +219,3 @@ input::placeholder {
 .btnClear:hover {
   color: rgb(122, 121, 121);
 }
-
-button {
-  cursor: pointer;
-  transition: 0.5s ease-in-out;
-}
-span {
-  transition: 0.5s ease-in-out;
-}
-/* 
-._transparent {
-  opacity: 0;
-} */
