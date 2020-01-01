@@ -216,3 +216,8 @@ input::placeholder {
 .btnClear:hover {
   color: rgb(122, 121, 121);
 }
+
+.list > li:hover {
+  border-left: 4px solid #dd969c;
+  cursor: move;
+}
