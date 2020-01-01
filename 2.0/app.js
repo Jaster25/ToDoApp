@@ -254,16 +254,19 @@ const handleBtnClear = event => {
 const handleBtnFold = event => {
   event.preventDefault();
   const contents = document.querySelector("#contents-list-wrap");
-  if (FOLD) {
+  FOLD = !FOLD;
+
+  if (!FOLD) {
+    contents.style.height = "0px";
     contents.style.visibility = "hidden";
     btnFold.style.background = 'url("images/close.png")';
     btnFold.style.backgroundSize = "100%,100%";
   } else {
+    contents.style.height = "auto";
     contents.style.visibility = "visible";
     btnFold.style.background = 'url("images/open.png")';
     btnFold.style.backgroundSize = "100%,100%";
   }
-  FOLD = !FOLD;
 };
 
 const handleBtnDelAppear = event => {
