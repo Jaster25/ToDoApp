@@ -223,10 +223,12 @@ const handleCheck = event => {
   function checkOut() {
     btnCheck.style.background = 'url("images/checked.png")';
     btnCheck.style.backgroundSize = "100%,100%";
+    btnCheck.disabled = false;
   }
   function checkIn() {
     btnCheck.style.background = 'url("images/checked-green.png")';
     btnCheck.style.backgroundSize = "100%,100%";
+    btnCheck.disabled = true;
     setTimeout(checkOut, 1000);
   }
 
@@ -282,7 +284,7 @@ const handleBtnDelAppear = event => {
   const id = parseInt(event.target.id);
   list.childNodes.forEach(li => {
     if (id === parseInt(li.id)) {
-      var btnDel = li.querySelector(".btnDelete");
+      let btnDel = li.querySelector(".btnDelete");
       btnDel.style.visibility = "visible";
     }
   });
@@ -291,7 +293,7 @@ const handleBtnDelDisappear = event => {
   const id = parseInt(event.target.id);
   list.childNodes.forEach(li => {
     if (id === parseInt(li.id)) {
-      var btnDel = li.querySelector(".btnDelete");
+      let btnDel = li.querySelector(".btnDelete");
       btnDel.style.visibility = "hidden";
     }
   });
