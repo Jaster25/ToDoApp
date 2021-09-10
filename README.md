@@ -10,9 +10,7 @@
 ### Used Languages
 
 - HTML
-
 - CSS
-
 - JavaScript
 
 <br>
