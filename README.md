@@ -5,13 +5,17 @@
 
 <img src="https://github.com/Jaster25/ToDoApp/blob/master/2.0/images/todoApp.gif" width="500" height="594" />
 
+<br>
+
 ### Used Languages
 
->HTML
+- HTML
 
->CSS
+- CSS
 
->JavaScript
+- JavaScript
+
+<br>
 
 ### Overview
 
